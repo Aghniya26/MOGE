@@ -37,19 +37,17 @@ nav img {
 }
 button {
   background: #4b6de9;
-  border: 1px solid #6486b9;
-  border-radius: 25px;
-  width: 190px;
+  border: 1px solid #4b6de9;
+  border-radius: 10px;
   height: 54px;
   color: white;
   font-weight: 600;
+  margin-top: 20px;
 }
-.container1 {
+.summaryboard {
   font-weight: 500;
-  background: #2195ba;
   color: white;
   margin: 30px 0;
-  height: 246px;
   padding: 30px 0;
 }
 hr {
@@ -60,4 +58,71 @@ hr {
 }
 .navbar .navbar-nav .nav-link.active {
   border-bottom: 3px solid black;
+}
+.maincontent {
+  margin: 5% 15% auto;
+}
+.overallatd {
+  width: 50%;
+  margin: 0 left;
+  font-weight: 600;
+  padding: 0 10px;
+}
+.top5 {
+  width: 45%;
+  margin: 0 left;
+  font-weight: 600;
+  padding: 0 10px;
+}
+.donut {
+  height: 500px;
+}
+.line {
+  border-top: 2px solid black;
+}
+.top5table {
+  width: 45%;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 10px 10px 10px 10px;
+}
+
+.col-green {
+  color: green;
+}
+
+.col-red {
+  color: red;
+}
+
+.col-orange {
+  color: orange;
+}
+
+th {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.bar-green {
+  background: rgba(112, 165, 87, 0.5) !important;
+}
+.bar-red {
+  background: rgba(232, 5, 18, 0.5) !important;
+}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: grey;
+  background-color: transparent;
+  text-decoration: none;
+}
+small {
+  color: rgba(0, 0, 0, 0.5);
 }

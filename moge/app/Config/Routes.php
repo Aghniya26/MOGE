@@ -35,7 +35,20 @@ $routes->get('/attendance', 'atdController::index');
 $routes->post('/attendance', 'atdController::index');
 $routes->get('/attendance/detail/(:any)/(:any)', 'detailAtdController::index/$1/$2');
 $routes->get('/participant', 'ptcController::index');
-
+$routes->get('/class', 'classController::index');
+$routes->get('/evaluation', 'evaluationController::index');
+$routes->get('/callback', 'zoomController::callback');
+$routes->get('/loginzoom', 'zoomController::index');
+$routes->get('/ptc/(:any)', 'zoomController::addParticipants/$1');
+$routes->get('/detailclass/(:any)', 'classController::currentClass/$1');
+$routes->post('/addmeeting', 'zoomController::addMeeting');
+$routes->post('/addclass', 'classController::add');
+$routes->post('/editclass', 'classController::edit');
+$routes->post('/deleteclass', 'classController::delete');
+$routes->post('/participant/edit', 'ptcController::edit');
+$routes->post('/participant/delete', 'ptcController::delete');
+$routes->post('/participant/import', 'ptcController::import');
+$routes->post('/evaluation', 'evaluationController::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

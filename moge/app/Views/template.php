@@ -18,6 +18,8 @@
     <script src=" //cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
 
 
     <title>MOGE</title>
@@ -44,7 +46,7 @@
                         <a class="nav-link" href="<?= base_url('participant'); ?>">Participants</a>
                     </li>
                     <li class="nav-item mx-lg-5">
-                        <a class="nav-link" href="#">Evaluations</a>
+                        <a class="nav-link" href="<?= base_url('evaluation'); ?>">Evaluations</a>
                     </li>
                 </ul>
                 <div class="p-2">

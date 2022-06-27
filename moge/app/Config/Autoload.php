@@ -3,6 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Config\AutoloadConfig;
+use Composer\Autoload\ClassLoader;
 
 /**
  * -------------------------------------------------------------------
@@ -64,7 +65,11 @@ class Autoload extends AutoloadConfig
      *
      * @var array<string, string>
      */
-    public $classmap = [];
+    public $classmap = [
+        'PHPExcel' => APPPATH . './ThirdParty/PHPExcel/PHPExcel.php',
+        'vendor' => APPPATH . '../vendor/autoload.php',
+        'conf' => APPPATH . 'Helpers/conf.php'
+    ];
 
     /**
      * -------------------------------------------------------------------

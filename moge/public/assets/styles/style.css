@@ -62,6 +62,9 @@ hr {
 .maincontent {
   margin: 5% 15% auto;
 }
+.maincontent2 {
+  margin: 5% 500px auto;
+}
 .overallatd {
   width: 50%;
   margin: 0 left;

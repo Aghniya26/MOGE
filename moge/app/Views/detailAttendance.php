@@ -8,7 +8,7 @@
             <p class="f24"><?= $participant[0]->ptc_name ?></p>
         </div>
         <div class="col-6">
-            <p class="f32"><?= $avg_atd[0]->averageAtd * 100 ?>%</p>
+            <p class="f32"><?= round($avg_atd[0]->averageAtd * 100) ?>%</p>
             <p class="f16">Average Attendance</p>
         </div>
     </div>

@@ -19,20 +19,22 @@ class evaluationController extends BaseController
     }
     public function index()
     {
-        if (!$this->request->getPost()) {
-            $pm = 0.8;
-            $total_pm = 0.8;
-        } else {
-            $pm = $this->request->getPost('pm') / 100;
-            $total_pm = $this->request->getPost('total_pm');
+        if ($this->session->get("logged_in") == true) {
+            if (!$this->request->getPost()) {
+                $pm = 0.8;
+                $total_pm = 0.8;
+            } else {
+                $pm = $this->request->getPost('pm') / 100;
+                $total_pm = $this->request->getPost('total_pm');
+            }
+            $participant = new Mparticipant();
+            $data = array(
+                'participant' => $this->dbAtd->getEvaluation($pm, $this->session->get("class_id")),
+                'total_pm' => $total_pm,
+                'pm' => $pm
+            );
+            return view('evaluation', $data);
         }
-        $participant = new Mparticipant();
-        $data = array(
-            'participant' => $this->dbAtd->getEvaluation($pm, $this->session->get("class_id")),
-            'total_pm' => $total_pm,
-            'pm' => $pm
-        );
-        return view('evaluation', $data);
     }
 
     public function import()

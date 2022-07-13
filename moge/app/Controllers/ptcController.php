@@ -20,10 +20,15 @@ class ptcController extends BaseController
     public function index()
     {
 
-        $data = array(
-            'participants' => $this->dbPtc->getAllParticipants($this->session->get("class_id"))
-        );
-        return view('participant', $data);
+        if ($this->session->get("logged_in") == true) {
+            $data = array(
+                'participants' => $this->dbPtc->getAllParticipants($this->session->get("class_id"))
+            );
+            return view('participant', $data);
+        } else {
+            $this->session->setFlashdata('msg', "Please log in!");
+            return redirect()->route('/');
+        }
     }
 
     public function import()
@@ -43,7 +48,9 @@ class ptcController extends BaseController
                 if ($x == 0) {
                     continue;
                 }
-
+                echo $name = $row[0];
+                echo $email = $row[1];
+                echo $zoom_id = $row[2];
 
                 $name = $row[0];
                 $email = $row[1];

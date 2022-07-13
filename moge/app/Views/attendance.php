@@ -2,7 +2,18 @@
 
 <?= $this->section('content'); ?>
 
-
+<?php
+if (session()->getFlashData('warning')) {
+?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?= session()->getFlashData('warning'); ?>
+        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<?php
+}
+?>
 
 
 <!-- information summary container -->
@@ -236,6 +247,9 @@
             var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart.draw(data, options);
         }
+    </script>
+    <script>
+        $('.alert').alert()
     </script>
 
     <script>

@@ -13,12 +13,19 @@ class Mclass extends Model
         $this->db = db_connect();
     }
 
-    public function getClass()
+    public function getClass($user_id)
     {
-        $sql = "SELECT * FROM class";
+        $sql = "SELECT * FROM class WHERE `USER_ID`='$user_id'";
 
         return $this->db->query($sql)->getResult();
     }
+    public function countClass($user_id)
+    {
+        $sql = "SELECT count(user_id) as totalClass FROM class WHERE `USER_ID`='$user_id'";
+
+        return $this->db->query($sql)->getResult();
+    }
+
 
     public function createClass($user_id, $title_class, $detail_class, $room, $num_meetings, $color)
     {

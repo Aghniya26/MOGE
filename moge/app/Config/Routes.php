@@ -32,6 +32,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/attendance', 'atdController::index');
+$routes->get('/settings', 'userController::displaySettings');
+$routes->post('/settings/editUser', 'userController::edit');
+$routes->post('/settings/deleteUser', 'userController::delete');
 $routes->post('/attendance', 'atdController::index');
 $routes->get('/attendance/detail/(:any)/(:any)', 'detailAtdController::index/$1/$2');
 $routes->get('/participant', 'ptcController::index');
@@ -49,6 +52,11 @@ $routes->post('/participant/edit', 'ptcController::edit');
 $routes->post('/participant/delete', 'ptcController::delete');
 $routes->post('/participant/import', 'ptcController::import');
 $routes->post('/evaluation', 'evaluationController::index');
+$routes->get('/', 'loginController::displayLogin');
+$routes->post('/auth', 'loginController::auth');
+$routes->get('/register', 'userController::displayRegister');
+$routes->post('/register', 'userController::add');
+$routes->get('/logout', 'userController::logout');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

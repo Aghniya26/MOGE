@@ -19,4 +19,10 @@ class Mmeeting extends Model
         $sql = "SELECT meeting_id FROM meeting WHERE uuid='$uuid'";
         return $this->db->query($sql)->getResult();
     }
+    public function nextInsertMeetingId()
+    {
+        $sql = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES
+        WHERE TABLE_SCHEMA = 'mogetest2' AND TABLE_NAME = 'meeting'";
+        return $this->db->query($sql)->getResult();
+    }
 }

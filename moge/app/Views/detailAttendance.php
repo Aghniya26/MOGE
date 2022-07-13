@@ -37,7 +37,7 @@
             if ($status == 0) {
             ?>
                 <tr>
-                    <td style="width: 25%;">Meeting 1</td>
+                    <td style="width: 25%;"><?= $m->meeting_id; ?></td>
                     <td style="width: 75%;">
                         <div class="progress">
                             <div class="progress-bar bar-red" role="progressbar" style="width: 100%; " aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="<?= $t1 ?>-<?= $t2 ?>"></div>

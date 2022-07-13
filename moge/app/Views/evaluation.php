@@ -6,8 +6,8 @@
     <div class="mb-3">
         <p class="f24 p-1">Generate Passed Student</p>
         <div class="line"></div>
-        <p>You can generate list of students who are eligible to pass your course. You can set other parameters besides attendance, such as passing grade.</p>
-        <p>Use this template to import the test score. <a href="#">Click here</a> to download the template. </p>
+        <p>You can generate list of students who are eligible to pass your course based on minimum presence time in all meetings.</p>
+
 
         <form action="<?= base_url('evaluation') ?>" method="POST">
             <div class="form-check-row">

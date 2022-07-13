@@ -45,6 +45,13 @@
         </div>
 
     </nav>
+    <?php if (session()->getFlashdata('msg')) : ?>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert"><?= session()->getFlashdata('msg') ?>
+            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php endif; ?>
 
     <div class="maincontent">
         <div class="d-flex justify-content-end">

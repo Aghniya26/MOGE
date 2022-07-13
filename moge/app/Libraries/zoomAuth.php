@@ -4,7 +4,7 @@ namespace App\Libraries;
 
 class zoomAuth
 {
-    public $CLIENT_ID = '9ZXEzF3GRn2RMzjuNxjL7g';
-    public $CLIENT_SECRET = 'x2DcaOGzWUDCFP16iAuhdsIo7twHZdU3';
-    public $REDIRECT_URI = 'https://ed09-114-5-212-124.ap.ngrok.io/callback';
+    public $CLIENT_ID = 'HmiLi8cnQ7qYMxieLjVgYA';
+    public $CLIENT_SECRET = 'CGhd5l9MpDUefIz7Szw4w3b5tMroBssR';
+    public $REDIRECT_URI = 'https://9a4a-114-5-215-149.ap.ngrok.io/callback';
 }

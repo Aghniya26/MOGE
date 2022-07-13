@@ -19,17 +19,16 @@ class classController extends BaseController
     }
     public function index()
     {
-        $data = array(
-            'class' => $this->dbClass->getClass()
-        );
+        if ($this->session->get("logged_in") == true) {
+            $data = array(
+                'class' => $this->dbClass->getClass($this->session->get('user_id'))
+            );
 
-
-
-        // $this->session->set("username", 3); // setting session data
-
-
-        // echo $this->session->get("class_id");
-        return view('class', $data);
+            return view('class', $data);
+        } else {
+            $this->session->setFlashdata('msg', "Please log in!");
+            return redirect()->route('/');
+        }
     }
     public function currentClass($class_id)
     {
@@ -39,17 +38,22 @@ class classController extends BaseController
 
     public function add()
     {
-
-        if ($this->request->getPost()) {
-            $this->dbClass->createClass(
-                2,
-                $this->request->getPost('title'),
-                $this->request->getPost('detail'),
-                $this->request->getPost('room'),
-                $this->request->getPost('num_meetings'),
-                $this->request->getPost('color')
-            );
+        $count = $this->dbClass->countClass($this->session->get('user_id'));
+        if ($count[0]->totalClass <= 5) {
+            if ($this->request->getPost()) {
+                $this->dbClass->createClass(
+                    $this->session->get('user_id'),
+                    $this->request->getPost('title'),
+                    $this->request->getPost('detail'),
+                    $this->request->getPost('room'),
+                    $this->request->getPost('num_meetings'),
+                    $this->request->getPost('color')
+                );
+            }
+        } else {
+            $this->session->setFlashdata('msg', "you've reached teh limit of maximum class!");
         }
+
 
         return redirect()->route('class');
     }
